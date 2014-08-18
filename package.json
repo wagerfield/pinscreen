@@ -1,0 +1,28 @@
+{
+  "name": "pinscreen",
+  "version": "0.0.0",
+  "description": "WebGL Pinscreen",
+  "homepage": "http://wagerfield.github.io/pinscreen/",
+  "author": "Matthew Wagerfield",
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "scripts": {
+    "build": "grunt build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wagerfield/pinscreen.git"
+  },
+  "keywords": [
+    "webgl",
+    "pinscreen"
+  ],
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "time-grunt": "^0.3.2",
+    "load-grunt-tasks": "^0.6.0",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-uglify": "^0.5.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
