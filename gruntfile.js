@@ -8,31 +8,65 @@ module.exports = function(grunt) {
     // Package Data
     pkg: grunt.file.readJSON('package.json'),
 
-    // Source Files
-    sourceFiles: [
-    ],
+    // Stylus Tasks
+    stylus: {
+      compile: {
+        src: 'assets/styles/styl/styles.styl',
+        dest: 'assets/styles/css/styles.css'
+      }
+    },
+
+    // CoffeeScript Tasks
+    coffee: {
+      options: {
+        join: true
+      },
+      compile: {
+        src: [
+          'assets/scripts/coffee/**/*.coffee'
+        ],
+        dest: 'assets/scripts/js/project.js'
+      }
+    },
 
     // Concat Tasks
     concat: {
-      deploy: {
-        src: '<%= sourceFiles %>',
-        dest: 'deploy/<%= pkg.name %>.js'
+      libraries: {
+        src: [
+          'bower_components/threejs/build/three.js',
+          'bower_components/dat-gui/build/dat.gui.js'
+        ],
+        dest: 'assets/scripts/js/libraries.js'
+      },
+      scripts: {
+        src: [
+          'assets/scripts/js/libraries.js',
+          'assets/scripts/js/project.js'
+        ],
+        dest: 'assets/scripts/js/scripts.js'
       }
     },
 
     // Uglify Tasks
     uglify: {
-      deploy: {
-        src: '<%= concat.deploy.dest %>',
-        dest: 'deploy/<%= pkg.name %>.min.js'
+      scripts: {
+        src: '<%= concat.scripts.dest %>',
+        dest: 'assets/scripts/js/scripts.min.js'
       }
     },
 
     // Watch Tasks
     watch: {
-      build: {
-        files: ['gruntfile.js', '<%= sourceFiles %>'],
-        tasks: ['build'],
+      stylus: {
+        files: ['gruntfile.js', 'assets/styles/styl/**/*.styl'],
+        tasks: ['stylus'],
+        options: {
+          spawn: false
+        }
+      },
+      coffee: {
+        files: ['gruntfile.js', 'assets/scripts/coffee/**/*.coffee'],
+        tasks: ['coffee'],
         options: {
           spawn: false
         }
@@ -41,6 +75,6 @@ module.exports = function(grunt) {
   });
 
   // Register Tasks
-  grunt.registerTask('build', ['concat', 'uglify']);
+  grunt.registerTask('build', ['stylus', 'coffee', 'concat']);
   grunt.registerTask('default', ['build', 'watch']);
 };
