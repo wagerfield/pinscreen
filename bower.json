@@ -19,5 +19,9 @@
     "gruntfile.js",
     "node_modules",
     "bower_components"
-  ]
+  ],
+  "devDependencies": {
+    "threejs": "*",
+    "dat-gui": "~0.5.0"
+  }
 }
