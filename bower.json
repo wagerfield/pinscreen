@@ -1,0 +1,23 @@
+{
+  "name": "pinscreen",
+  "version": "0.0.0",
+  "description": "WebGL Pinscreen",
+  "homepage": "http://wagerfield.github.io/pinscreen/",
+  "authors": [
+    "Matthew Wagerfield"
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "webgl",
+    "pinscreen"
+  ],
+  "ignore": [
+    "**/.*",
+    "gruntfile.js",
+    "node_modules",
+    "bower_components"
+  ]
+}
