@@ -2,6 +2,8 @@
 
 > WebGL Pinscreen
 
+![XGen][reference]
+
 ## Credits
 
 Inspired by Lee Griggs' [XGen cubes rendered with Arnold for Maya][xgen]
@@ -18,3 +20,4 @@ Licensed under [MIT][mit]. Enjoy.
 [twitter]: http://twitter.com/wagerfield
 [mit]: http://www.opensource.org/licenses/mit-license.php
 [xgen]: https://www.behance.net/gallery/18261191/XGen-rendered-with-Arnold-for-Maya
+[reference]: assets/images/reference.jpg
